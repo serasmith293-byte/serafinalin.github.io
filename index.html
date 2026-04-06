@@ -688,16 +688,35 @@
 <!-- WHATSAPP FLOAT -->
 <a class="whatsapp-float" href="https://wa.me/8613113125793" target="_blank" title="Chat on WhatsApp">💬</a>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  // Form submit handler
+  emailjs.init('UouNxjgSuPfYHagbO');
+
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✓ Message Sent! We\'ll reply within 24 hours.';
-    btn.style.background = '#27ae60';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
-    // TODO: Replace with your actual form backend (Formspree / EmailJS)
-    // fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(e.target) })
+
+    const formData = {
+      from_name:  e.target.querySelector('input[placeholder="John Smith"]').value,
+      company:    e.target.querySelector('input[placeholder="Your Company"]').value,
+      from_email: e.target.querySelector('input[type="email"]').value,
+      phone:      e.target.querySelector('input[placeholder="+1 234 567 8900"]').value,
+      product:    e.target.querySelector('select').value,
+      message:    e.target.querySelector('textarea').value,
+    };
+
+    emailjs.send('service_o4246', 'template_xan3btj', formData)
+      .then(() => {
+        btn.textContent = '✓ Message Sent! We\'ll reply within 24 hours.';
+        btn.style.background = '#27ae60';
+      })
+      .catch(() => {
+        btn.textContent = 'Failed to send. Please email us directly.';
+        btn.style.background = '#e84118';
+        btn.disabled = false;
+      });
   }
 
   // Smooth mobile menu (basic)
