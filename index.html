@@ -117,9 +117,12 @@
     }
     .prod-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
     .prod-img {
-      height: 180px; display: flex; align-items: center; justify-content: center;
-      font-size: 64px; background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+      height: 220px; overflow: hidden;
     }
+    .prod-img img {
+      width: 100%; height: 100%; object-fit: cover; transition: transform .4s;
+    }
+    .prod-card:hover .prod-img img { transform: scale(1.05); }
     .prod-body { padding: 22px; }
     .prod-body h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--primary); }
     .prod-body p { font-size: 14px; color: var(--gray); margin-bottom: 14px; }
@@ -317,10 +320,22 @@
     <div class="hero-visual">
       <div style="font-size:13px;opacity:.6;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;">Our Product Range</div>
       <div class="product-grid">
-        <div class="product-card-mini"><div class="icon">📡</div><p>Radome</p></div>
-        <div class="product-card-mini"><div class="icon">🚤</div><p>UAV Boat Hull</p></div>
-        <div class="product-card-mini"><div class="icon">🚁</div><p>Drone Shell</p></div>
-        <div class="product-card-mini"><div class="icon">🚗</div><p>Auto Body</p></div>
+        <div class="product-card-mini">
+          <img src="product-radome.png" alt="Radome" style="width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px;" />
+          <p>Radome</p>
+        </div>
+        <div class="product-card-mini">
+          <img src="product-boat.png" alt="UAV Boat Hull" style="width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px;" />
+          <p>UAV Boat Hull</p>
+        </div>
+        <div class="product-card-mini">
+          <img src="product-drone.png" alt="Drone Shell" style="width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px;" />
+          <p>Drone Shell</p>
+        </div>
+        <div class="product-card-mini">
+          <img src="product-auto.png" alt="Auto Body" style="width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px;" />
+          <p>Auto Body</p>
+        </div>
       </div>
     </div>
   </div>
@@ -347,7 +362,7 @@
     <div class="products-grid">
 
       <div class="prod-card">
-        <div class="prod-img">📡</div>
+        <div class="prod-img"><img src="product-radome.png" alt="Radome Enclosure" /></div>
         <div class="prod-body">
           <h3>Radome Enclosures</h3>
           <p>High-performance RF-transparent radomes for radar, satellite, and communication systems. Precision molded for minimal signal loss.</p>
@@ -361,7 +376,7 @@
       </div>
 
       <div class="prod-card">
-        <div class="prod-img">🚤</div>
+        <div class="prod-img"><img src="product-boat.png" alt="UAV Boat Hull" /></div>
         <div class="prod-body">
           <h3>USV / UAV Boat Hulls</h3>
           <p>Lightweight, high-strength hulls for unmanned surface vessels. Corrosion-resistant, optimized hydrodynamic profiles.</p>
@@ -375,7 +390,7 @@
       </div>
 
       <div class="prod-card">
-        <div class="prod-img">🚗</div>
+        <div class="prod-img"><img src="product-auto.png" alt="Automotive Body Panels" /></div>
         <div class="prod-body">
           <h3>Automotive Body Panels</h3>
           <p>Lightweight carbon fiber and FRP body panels for race cars, EVs, and specialty vehicles. OEM-quality surface finish.</p>
@@ -389,7 +404,7 @@
       </div>
 
       <div class="prod-card">
-        <div class="prod-img">🚁</div>
+        <div class="prod-img"><img src="product-drone.png" alt="Drone UAV Shell" /></div>
         <div class="prod-body">
           <h3>Drone / UAV Shells</h3>
           <p>Ultra-light carbon fiber drone frames and enclosures. Engineered for maximum strength-to-weight ratio in demanding flight conditions.</p>
@@ -403,7 +418,7 @@
       </div>
 
       <div class="prod-card">
-        <div class="prod-img">⚙️</div>
+        <div class="prod-img"><img src="product-equipment.png" alt="Industrial Equipment Housing" /></div>
         <div class="prod-body">
           <h3>Industrial Equipment Housings</h3>
           <p>Durable FRP enclosures for electrical cabinets, control boxes, sensors, and outdoor equipment. IP65+ rated options available.</p>
@@ -417,7 +432,7 @@
       </div>
 
       <div class="prod-card">
-        <div class="prod-img">🔧</div>
+        <div class="prod-img"><img src="factory-workshop.png" alt="OEM Custom Projects" /></div>
         <div class="prod-body">
           <h3>OEM / Custom Projects</h3>
           <p>Have a unique requirement? We offer full-cycle custom development: design, mold making, prototyping, and serial production.</p>
@@ -462,6 +477,44 @@
         <div class="why-icon">🌍</div>
         <h3>Global Shipping</h3>
         <p>Experienced with international logistics. DDP, FOB, CIF — all Incoterms supported.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTORY -->
+<section style="padding:80px 20px;background:#fff;">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="tag">Our Factory</div>
+      <div class="section-title">State-of-the-Art Manufacturing</div>
+      <div class="section-sub">15,000㎡ production facility with advanced composite molding equipment and strict quality control.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;">
+      <div style="border-radius:10px;overflow:hidden;height:320px;">
+        <img src="factory-workshop.png" alt="Factory Workshop" style="width:100%;height:100%;object-fit:cover;" />
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="border-radius:10px;overflow:hidden;flex:1;">
+          <img src="factory-qc.png" alt="Quality Control" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+        <div style="border-radius:10px;overflow:hidden;flex:1;">
+          <img src="company-building.png" alt="Company Building" style="width:100%;height:100%;object-fit:cover;" />
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:var(--primary);border-radius:10px;padding:28px;color:#fff;flex:1;">
+          <div style="font-size:36px;font-weight:800;color:#f9ca24;">15,000㎡</div>
+          <div style="font-size:14px;margin-top:8px;opacity:.85;">Production Area</div>
+        </div>
+        <div style="background:var(--accent);border-radius:10px;padding:28px;color:#fff;flex:1;">
+          <div style="font-size:36px;font-weight:800;">200+</div>
+          <div style="font-size:14px;margin-top:8px;opacity:.85;">Skilled Workers</div>
+        </div>
+        <div style="background:#1a5276;border-radius:10px;padding:28px;color:#fff;flex:1;">
+          <div style="font-size:36px;font-weight:800;color:#f9ca24;">30+</div>
+          <div style="font-size:14px;margin-top:8px;opacity:.85;">Mold Sets</div>
+        </div>
       </div>
     </div>
   </div>
@@ -690,7 +743,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-  emailjs.init('UouNxjgSuPfYHagbO');
+  emailjs.init('UouNxjgSuPfYHagbO'); // Public Key
 
   function handleSubmit(e) {
     e.preventDefault();
